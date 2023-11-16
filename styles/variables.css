@@ -1,1 +1,11 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+    --font-family: 'Inter-Variable';
+    --font-family-accent: 'PressStart2P';
+    --font-weight: 700;
+    --font-weight-title: 400;
+    --bg-color: #fff;
+    --color-accent: #000;
+    --bg-gradient-color-accent: #d3d3d3;
+    --bg-gradient-color-from: #e7e7e7;
+    --bg-gradient-color-to: #1a1a1a;
+  }
