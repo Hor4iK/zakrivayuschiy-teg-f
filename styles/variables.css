@@ -1,8 +1,8 @@
 :root {
     --font-family: 'Inter-Variable';
     --font-family-accent: 'PressStart2P';
-    --font-weight: 700;
-    --font-weight-title: 400;
+    --font-weight: 400;
+    --font-weight-title: 700;
     --bg-color: #fff;
     --color-accent: #000;
     --bg-gradient-color-accent: #d3d3d3;
