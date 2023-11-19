@@ -9,6 +9,7 @@
     --font-weight-title: 785;
     --bg-color: #000;
     --color-accent: #00cc14;
+    --font-color-button: #00cc14;
     --bg-gradient-color-accent: #000;
     --bg-gradient-color-from: #007f0c;
     --bg-gradient-color-to: #004306;
@@ -19,6 +20,7 @@
     --font-weight-title: 700;
     --bg-color: #fff;
     --color-accent: #000;
+    --font-color-button: #fff;
     --bg-gradient-color-accent: #d3d3d3;
     --bg-gradient-color-from: #e7e7e7;
     --bg-gradient-color-to: #1a1a1a;
@@ -30,6 +32,7 @@
         --font-weight-title: 785;
         --bg-color: #000;
         --color-accent: #00cc14;
+        --font-color-button: #00cc14;
         --bg-gradient-color-accent: #000;
         --bg-gradient-color-from: #007f0c;
         --bg-gradient-color-to: #004306;
@@ -42,6 +45,7 @@
         --font-weight-title: 700;
         --bg-color: #fff;
         --color-accent: #000;
+        --font-color-button: #fff;
         --bg-gradient-color-accent: #d3d3d3;
         --bg-gradient-color-from: #e7e7e7;
         --bg-gradient-color-to: #1a1a1a;

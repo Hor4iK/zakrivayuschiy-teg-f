@@ -107,7 +107,7 @@
 
 .theme-menu__button:hover {
   opacity: 0.6;
-  transition: 300ms ease;
+  transition: opacity 300ms ease;
 }
 
 .theme-menu__button:focus {
@@ -153,7 +153,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 48px;
+  gap: 51px;
   margin-block-end: 49px;
 }
 
@@ -177,7 +177,7 @@
 
 .content__cards-list-item__card__picture-wrapper-image {
   width: 100%;
-  aspect-ratio: 1 / 1.01;
+  aspect-ratio: 1 / 1.015;
   object-fit: cover;
   object-position: 96% center;
   border: 2px solid var(--color-accent);
@@ -197,8 +197,7 @@
 }
 
 .content__cards-list-item__card__conteiner {
-  padding-inline: 24.93px;
-  padding-block: clamp(1.3375rem, 1.3004rem + 0.1524vw, 1.4375rem) 27px;
+  padding: 22px 23px;
   display: flex;
   flex-direction: column;
 }
@@ -208,28 +207,161 @@
 }
 
 .content__cards-list-item__card__conteiner-paragraph:first-child {
-  margin-block-end: 27px;
+  margin-block-end: 26px;
+}
+
+.content__cards-list-item__card__conteiner-evaluation {
+  display: flex;
+  align-self: end;
+  align-items: center;
+  gap: 8px;
+  margin-block-start: 26px;
+}
+
+.content__cards-list-item__card__conteiner-button-heart {
+  display: flex;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.content__cards-list-item__card__conteiner-button-heart:focus {
+  outline: none;
+}
+
+.content__cards-list-item__card__conteiner-button-heart:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -1px;
+  transition: outline 300ms ease;
+}
+
+.card__icon-button {
+
 }
 
 .content-button {
+  position: relative;
   border: 2px solid var(--color-accent);
   background-color: var(--bg-color);
+  cursor: pointer;
 }
 
-.content__cards-list-item__card__conteiner-button {
-  padding: 6px 35px;
-  margin-block-start: 25px;
-  align-self: end;
-  position: relative;
+.content-button::before {
+  content: ''; 
+  position: absolute;
+  inset: 0;
+  transform: scaleX(0);
+  background-color: var(--color-accent);
+}
+
+.content-button:hover::before{
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+.content-button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--color-accent);
+  transition: box-shadow 300ms ease;
+}
+
+.content__cards-list-item__card__conteiner-button-like {
+  padding-block: 6px;
+  width: 130px;
 }
 
 .like-icon {
-  position: absolute;
-  left: -47px;
-  top: 0;
+  width: 39px;
+  height: 36px;
+}
+
+.like-icon .sparks {
+  opacity: 0;
+}
+
+.like-icon .core {
+  transition: fill 300ms linear 30ms;
+  fill: transparent;
+}
+
+.like-icon .main-body {
+  transition: fill 300ms linear;
+  fill: transparent;
+}
+
+.like-icon .contour {
+  transition: fill 100ms linear;
+  fill: var(--color-accent);
+}
+
+.like-icon:hover .core {
+  transition: fill 300ms linear;
+  fill: var(--color-accent);
+}
+
+.like-icon:hover .main-body {
+  transition: fill 300ms linear 50ms;
+  fill: var(--color-accent);
+}
+
+.like-icon:active .core {
+  transition: fill 300ms linear;
+  fill: var(--color-fill);
+}
+
+.like-icon:active .main-body {
+  transition: fill 300ms linear 50ms;
+  fill: var(--color-fill);
+}
+
+.like-icon.is-liked .core {
+  transition: fill 300ms linear;
+  fill: var(--color-fill);
+}
+
+.like-icon.is-liked .main-body {
+  transition: fill 300ms linear 50ms;
+  fill: var(--color-fill);
+}
+
+.like-icon.is-liked .contour {
+  transition: fill 300ms linear 60ms;
+  fill: var(--color-fill);
+}
+
+.is-liked .heart {
+  animation: size 300ms ease-in 100ms 1 alternate;
+}
+
+.is-liked .sparks {
+  animation: appearance 300ms ease-in 300ms 1 alternate;
+}
+
+@keyframes size {
+  from {
+    transform: scale(1);
+    transform-origin: center center;
+  }
+  to {
+    transform: scale(1.1);
+    transform-origin: center center;
+  }
+}
+
+@keyframes appearance {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .button__text {
+  position: relative;
+  mix-blend-mode: difference;
+  color: var(--font-color-button);
   font-family: var(--font-family-accent), fantasy, sans-serif;
   font-size: 14px;
   line-height: 0.9;
@@ -247,13 +379,10 @@
   padding: 15px 20px;
 }
 
-.card__icon-button {
-
-}
-
 .floppy-icon {
   width: 22px;
   height: 22px;
+  mix-blend-mode: difference;
 }
 
 @media (width <= 400px) {
@@ -268,6 +397,10 @@
 
   .content__button-save {
     flex-direction: column;
+  }
+
+  .content__cards-list-item__card__conteiner {
+    padding: 20px 25px 22px;
   }
 }
 
