@@ -177,7 +177,7 @@
 
 .content__cards-list-item__card__picture-wrapper-image {
   width: 100%;
-  aspect-ratio: 1 / 1.015;
+  aspect-ratio: 1 / 1.014;
   object-fit: cover;
   object-position: center center;
   border-block: 2px solid var(--color-accent);
@@ -225,7 +225,7 @@
 }
 
 .content__cards-list-item__card__conteiner {
-  padding: 22px 23px;
+  padding: 19.5px 23px 25px;
   display: flex;
   flex-direction: column;
 }
@@ -407,9 +407,12 @@
   padding: 15px 20px;
 }
 
-.floppy-icon {
+.content__button-save-svg {
   width: 22px;
   height: 22px;
+}
+
+.floppy-icon {
   mix-blend-mode: difference;
 }
 
@@ -462,26 +465,31 @@
     width: 100%;
   }
 
-  .floppy-icon {
+  .content__button-save-svg {
     width: 27px;
     height: 27px;
   }
 
-  .content__button-save {
-    flex-direction: column;
+  .content__cards-list {
+    gap: 50px;
   }
 
   .content__cards-list-item__card__conteiner {
-    padding: 20px 25px 22px;
+    padding: 20px 25px 26px;
   }
 
   .content__dialog-window[open] {
     padding-inline: 40px;
+    max-inline-size: 340px;
+  }
+  
+  .content__button-save {
+    flex-direction: column;
   }
 }
 
 @supports ((text-stroke: 0.5px var(--bg-color)) or (-webkit-text-stroke: 0.5px var(--bg-color))) {
-  .theme-light .content__cards-list-item__card__picture-wrapper-label {
+  .content__cards-list-item__card__picture-wrapper-label {
     -webkit-text-stroke: 0.5px var(--bg-color);
     text-stroke: 0.5px var(--bg-color);
     text-shadow: none;
