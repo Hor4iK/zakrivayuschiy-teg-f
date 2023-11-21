@@ -232,11 +232,29 @@
   outline: none;
 }
 
+.content__cards-list-item__card__conteiner-button-heart:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -1px;
+  transition: outline 300ms ease;
+}
+
 .content-button {
   position: relative;
   border: 2px solid var(--color-accent);
   background-color: var(--bg-color);
   cursor: pointer;
+}
+
+.content-button:hover::before {
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+.content-button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--color-accent);
+  transition: box-shadow 300ms ease;
 }
 
 .content-button::before {
