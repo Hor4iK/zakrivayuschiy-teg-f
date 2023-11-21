@@ -142,7 +142,7 @@
 
 .content__cards-list-item__card-title {
   margin: 5px 8px;
-  font-weight: var(--font-weight-title);
+  font-variation-settings: var(--font-weight-title);
 }
 
 .content__cards-list-item__card__picture-wrapper {
