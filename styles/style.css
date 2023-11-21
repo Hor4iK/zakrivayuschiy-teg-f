@@ -179,8 +179,36 @@
   width: 100%;
   aspect-ratio: 1 / 1.015;
   object-fit: cover;
-  object-position: 96% center;
-  border: 2px solid var(--color-accent);
+  object-position: center center;
+  border-block: 2px solid var(--color-accent);
+}
+
+.nebula {
+  filter: blur(3px) brightness(1.2) grayscale(0.6);
+}
+
+.change-shade {
+  filter: hue-rotate(315deg);
+}
+
+.sepia {
+  filter: sepia(0.5);
+}
+
+.hand-touch {
+  filter: contrast(0.9) saturate(3.2);
+}
+
+.pink-egg {
+  filter: hue-rotate(302deg);
+}
+
+.hand-ocean {
+  filter: sepia(0.2) brightness(0.8);
+}
+
+.jungle {
+  filter: opacity(0.9) contrast(1.2) brightness(1.8) sepia(0.3);
 }
 
 .content__cards-list-item__card__picture-wrapper-label {
@@ -385,6 +413,50 @@
   mix-blend-mode: difference;
 }
 
+.dialog-floppy {
+
+}
+
+.dialog-floppy[open] {
+  max-inline-size: 355px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.dialog-floppy::backdrop {
+  background-color: #000;
+  opacity: 0.75;
+}
+
+.content__dialog-window__title-part {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.content__dialog-window__title-part-svg {
+  width: 85px;
+  height: 40px;
+}
+
+.content__dialog-window__title-part-title {
+  font-family: var(--font-family-accent), fantasy, sans-serif;
+  color: var(--color-accent);
+  font-size: 14px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.content__dialog-window-button {
+  text-transform: uppercase;
+  padding-block: 7px;
+  width: 100%;
+}
+
 @media (width <= 400px) {
   .frame {
     width: 100%;
@@ -401,6 +473,10 @@
 
   .content__cards-list-item__card__conteiner {
     padding: 20px 25px 22px;
+  }
+
+  .content__dialog-window[open] {
+    padding-inline: 40px;
   }
 }
 
