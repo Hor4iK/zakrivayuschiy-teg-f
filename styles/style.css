@@ -142,7 +142,7 @@
 
 .content__cards-list-item__card-title {
   margin: 5px 8px;
-  font-variation-settings: var(--font-weight-title);
+  font-variation-settings: 'wgth' var(--font-weight-title);
 }
 
 .content__cards-list-item__card__picture-wrapper {
@@ -245,6 +245,14 @@
   cursor: pointer;
 }
 
+.content-button::before {
+  content: ''; 
+  position: absolute;
+  inset: 0;
+  transform: scaleX(0);
+  background-color: var(--color-accent);
+}
+
 .content-button:hover::before {
   transition: transform 0.5s ease-in-out;
   transform: scaleX(1);
@@ -255,14 +263,6 @@
   outline: none;
   box-shadow: 2px 2px 0 var(--color-accent);
   transition: box-shadow 300ms ease;
-}
-
-.content-button::before {
-  content: ''; 
-  position: absolute;
-  inset: 0;
-  transform: scaleX(0);
-  background-color: var(--color-accent);
 }
 
 .content__cards-list-item__card__conteiner-button-like {
