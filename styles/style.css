@@ -245,6 +245,7 @@
 }
 
 .content-button::before {
+  content: '';
   position: absolute;
   inset: 0;
   transform: scaleX(0);
