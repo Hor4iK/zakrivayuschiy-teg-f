@@ -9,9 +9,8 @@
 @font-face {
     font-family: 'Inter-Variable';
     src:
-      local('Roboto-Flex-Variable'),
       url('./Inter-Variable.woff2') format('woff2 supports variations'),
-          url('./Inter-Variable.woff2') format('woff2-variations');
+      url('./Inter-Variable.woff2') format('woff2-variations');
     font-weight: 400 785;
     font-display: swap;
   }

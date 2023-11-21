@@ -23,7 +23,7 @@
   padding-block-start: 100px;
   font-family: var(--font-family), Arial, Helvetica, sans-serif;
   font-size: 18px;
-  font-variation-settings: 'wgth' var(--font-weight);
+  font-variation-settings: "wgth" var(--font-weight);
   background-color: var(--bg-color);
   background-image:
   repeating-linear-gradient(to right, var(--bg-gradient-color-accent) 0 2px, transparent 2px 4px),
@@ -142,7 +142,7 @@
 
 .content__cards-list-item__card-title {
   margin: 5px 8px;
-  font-variation-settings: 'wgth' var(--font-weight-title);
+  font-variation-settings: "wgth" var(--font-weight-title);
 }
 
 .content__cards-list-item__card__picture-wrapper {
@@ -246,7 +246,6 @@
 }
 
 .content-button::before {
-  content: ''; 
   position: absolute;
   inset: 0;
   transform: scaleX(0);
