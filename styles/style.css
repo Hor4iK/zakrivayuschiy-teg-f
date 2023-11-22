@@ -1,19 +1,3 @@
-/* Здесь вы напишете основную часть стилей страницы.
-
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
-Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
-
-*/
-
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -21,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   padding-block-start: 100px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
   font-size: 18px;
   font-variation-settings: 'wght' var(--font-weight);
   background-color: var(--bg-color);
@@ -66,8 +50,7 @@
 }
 
 .header__theme-menu {
-  position: relative;
-  left: 10px;
+  margin-inline-start: 18px;
 }
 
 .theme-menu__list {
@@ -84,6 +67,7 @@
   font-size: 14px;
   text-transform: uppercase;
   cursor: pointer;
+  transition: opacity 300ms ease;
 }
 
 .theme-menu__button::after {
@@ -94,12 +78,13 @@
   bottom: -3px;
   left: 8%;
   transform: scaleX(0);
+  transition: transform 300ms ease;
+  transform-origin: left center;
   background-color: var(--color-accent);
 }
 
 .theme-menu__button:hover {
   opacity: 0.6;
-  transition: opacity 300ms ease;
 }
 
 .theme-menu__button:focus {
@@ -108,8 +93,6 @@
 }
 
 .theme-menu__button:focus-visible::after {
-  transition: transform 300ms ease;
-  transform-origin: left center;
   transform: scaleX(1);
 }
 
@@ -121,6 +104,8 @@
 .theme-menu__button:disabled::before {
   content: '▶';
   position: absolute;
+  top: 0;
+  left: 0;
   width: 15px;
   height: 15px;
   animation: active-menu-point 500ms ease-in-out infinite alternate;
@@ -157,11 +142,11 @@
   border-block: 2px solid var(--color-accent);
 }
 
-.nebula {
+.blur-brightness-grayscale {
   filter: blur(3px) brightness(1.2) grayscale(0.6);
 }
 
-.change-shade {
+.hue-rotate315d {
   filter: hue-rotate(315deg);
 }
 
@@ -169,19 +154,19 @@
   filter: sepia(0.5);
 }
 
-.hand-touch {
+.contrast-saturate {
   filter: contrast(0.9) saturate(3.2);
 }
 
-.pink-egg {
+.hue-rotate302d {
   filter: hue-rotate(302deg);
 }
 
-.hand-ocean {
+.sepia-brightness {
   filter: sepia(0.2) brightness(0.8);
 }
 
-.jungle {
+.opacity-contrast-brightness-sepia {
   filter: opacity(0.9) contrast(1.2) brightness(1.8) sepia(0.3);
 }
 
@@ -194,7 +179,7 @@
   font-size: 14px;
   font-family: var(--font-family-accent), fantasy, sans-serif;
   text-shadow: 0 0 3px var(--bg-color);
-  opacity: 0.6;
+  opacity: 0.5;
   background-blend-mode: hard-light;
 }
 
@@ -225,6 +210,8 @@
   background-color: transparent;
   border: none;
   padding: 0;
+  transition: outline 300ms ease;
+  cursor: pointer;
 }
 
 .content__cards-list-item__card__conteiner-button-heart:focus {
@@ -234,7 +221,6 @@
 .content__cards-list-item__card__conteiner-button-heart:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: -1px;
-  transition: outline 300ms ease;
 }
 
 .content-button {
@@ -242,6 +228,7 @@
   border: 2px solid var(--color-accent);
   background-color: var(--bg-color);
   cursor: pointer;
+  transition: box-shadow 300ms ease;
 }
 
 .content-button::before {
@@ -250,18 +237,17 @@
   inset: 0;
   transform: scaleX(0);
   background-color: var(--color-accent);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: left center;
 }
 
 .content-button:hover::before {
-  transition: transform 0.5s ease-in-out;
   transform: scaleX(1);
-  transform-origin: left center;
 }
 
 .content-button:focus {
   outline: none;
   box-shadow: 2px 2px 0 var(--color-accent);
-  transition: box-shadow 300ms ease;
 }
 
 .content__cards-list-item__card__conteiner-button-like {
@@ -335,7 +321,13 @@
   width: 100%;
 }
 
-@media (width <= 400px) {
+@media (width <= 1200px) {
+  .frame {
+    width: calc(696 / 1000 * 100%);
+  }
+}
+
+@media (width <= 600px) {
   .frame {
     width: 100%;
   }
@@ -347,6 +339,11 @@
 
   .content__cards-list {
     gap: 50px;
+  }
+
+  .content__cards-list-item__card__picture-wrapper-label {
+    top: 25px;
+    right: 11px;
   }
 
   .content__cards-list-item__card__conteiner {
